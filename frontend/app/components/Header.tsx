@@ -106,7 +106,7 @@ export default function Header() {
                     </li>
                     <li><a data-animated-link="fadeOut" href="cart.html">Cart</a></li>
                     <li><a data-animated-link="fadeOut" href="wishlist.html">Wishlist</a></li>
-                    <li><a data-animated-link="fadeOut" href="checkout.html">Checkout</a></li>
+                    <li><a data-animated-link="fadeOut" href="checkout">Checkout</a></li>
                   </ul>
                 </li>
                 <li className="sub-icon menu-item-has-children">
@@ -123,7 +123,7 @@ export default function Header() {
                   <a data-animated-link="fadeOut" href="cart.html">cart</a>
                 </li>
                 <li className="sub-icon menu-item-has-children">
-                  <a data-animated-link="fadeOut" href="checkout.html">checkout</a>
+                  <a data-animated-link="fadeOut" href="checkout">checkout</a>
                 </li>
                 <li className="sub-icon menu-item-has-children">
                   <a data-animated-link="fadeOut" href="contact-us.html">contact  us</a>

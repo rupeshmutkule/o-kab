@@ -44,6 +44,33 @@ export default function RootLayout({
         <script src="/js/core/imagesloaded.pkgd.min.js"></script>
         <script src="/js/core/respond.src.js"></script>
         <script src="/js/libs.js"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            // Override any revolution slider calls to prevent errors
+            if (typeof jQuery !== 'undefined') {
+              (function($) {
+                // Store original revolution function if it exists
+                var originalRevolution = $.fn.revolution;
+                
+                // Override to safely handle missing slider
+                $.fn.revolution = function(options) {
+                  if (this.length === 0) {
+                    return this;
+                  }
+                  if (typeof originalRevolution === 'function') {
+                    try {
+                      return originalRevolution.call(this, options);
+                    } catch(e) {
+                      console.log('Revolution slider skipped:', e.message);
+                      return this;
+                    }
+                  }
+                  return this;
+                };
+              })(jQuery);
+            }
+          `
+        }} />
         <script src="/js/main.js"></script>
       </body>
     </html>

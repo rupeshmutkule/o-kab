@@ -16,19 +16,25 @@ export default function Footer() {
                     <Link href="/footer/about">About Us</Link>
                   </li>
                   <li>
-                    <Link href="/footer/about">Press</Link>
+                    <Link href="/footer/about?tab=press">Press</Link>
                   </li>
                   <li>
-                    <Link href="/footer/about">Store Locator</Link>
+                    <Link href="/footer/about?tab=store-locator">
+                      Store Locator
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/about">Track Order</Link>
+                    <Link href="/footer/about?tab=track-order">
+                      Track Order
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/about">Customer Support</Link>
+                    <Link href="/footer/about?tab=customer-support">
+                      Customer Support
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/about">Careers</Link>
+                    <Link href="/footer/about?tab=careers">Careers</Link>
                   </li>
                 </ul>
               </div>

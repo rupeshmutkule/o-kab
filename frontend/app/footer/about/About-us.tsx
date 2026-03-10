@@ -69,7 +69,10 @@ const testimonials = [
   },
 ];
 
-const slideImages = ["/images/slides/shop-1.jpg", "/images/slides/shop-2.jpg"];
+const slideImages = [
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80"
+];
 
 export default function AboutUsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,7 +103,7 @@ export default function AboutUsPage() {
         >
           {/* Background image */}
           <img
-            src="/images/slides/shop-1.jpg"
+            src={slideImages[0]}
             alt="About Us Banner"
             style={{
               position: "absolute",

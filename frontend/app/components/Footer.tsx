@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <>
@@ -5,68 +7,123 @@ export default function Footer() {
       <div className="top-footer">
         <div className="container">
           <div className="ok-row">
+            {/* About */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">About</h5>
               <div className="widget-content">
                 <ul className="with-border">
-                  <li><a data-animated-link="fadeOut" href="#">About Us</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Press</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Store Locator</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Track Order</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Customer Support</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Careers </a></li>
+                  <li>
+                    <Link href="/footer/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/about">Press</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/about">Store Locator</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/about">Track Order</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/about">Customer Support</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/about">Careers</Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
+            {/* Shop */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">Shop</h5>
               <div className="widget-content">
                 <ul className="with-border">
-                  <li><a data-animated-link="fadeOut" href="#">Sale Corner</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Featured Products</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Top Products</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">New Arrivals</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Store Locator</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Gifting </a></li>
+                  <li>
+                    <Link href="/footer/shop">Sale Corner</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/shop">Featured Products</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/shop">Top Products</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/shop">New Arrivals</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/shop">Store Locator</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/shop">Gifting</Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
+            {/* Categories */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">Categories</h5>
               <div className="widget-content">
                 <ul className="with-border">
-                  <li><a data-animated-link="fadeOut" href="#">Home Decor</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Dining</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Accessories</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Fashion</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Furniture</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Wall Decor</a></li>
+                  <li>
+                    <Link href="/footer/categories">Home Decor</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/categories">Dining</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/categories">Accessories</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/categories">Fashion</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/categories">Furniture</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/categories">Wall Decor</Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
+            {/* Policies */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">Policies</h5>
               <div className="widget-content">
                 <ul className="with-border">
-                  <li><a data-animated-link="fadeOut" href="#">Privacy Policy</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Terms & Conditions of Use</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Return Policy</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Refund Policy</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Cancellation Policy</a></li>
-                  <li><a data-animated-link="fadeOut" href="#">Gift Voucher T&C  </a></li>
+                  <li>
+                    <Link href="/footer/policies">Privacy Policy</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/policies">
+                      Terms &amp; Conditions of Use
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/policies">Return Policy</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/policies">Refund Policy</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/policies">Cancellation Policy</Link>
+                  </li>
+                  <li>
+                    <Link href="/footer/policies">Gift Voucher T&amp;C</Link>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
+            {/* Contact Us */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">Contact us</h5>
               <div className="widget-content">
                 <ul className="with-border featured-posts contact-icon">
                   <li>
-                    <i className="fa fa-map-marker "></i>
+                    <i className="fa fa-map-marker"></i>
                     <p>Bluett Avenue, Seaview, Isle of Wight PO34, UK</p>
                   </li>
                   <li>
@@ -81,20 +138,49 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+              <div className="widget-content" style={{ marginTop: "10px" }}>
+                <Link
+                  href="/footer/contact-us"
+                  className="button stroke uppercase"
+                  style={{ fontSize: "0.75rem", padding: "6px 14px" }}
+                >
+                  Contact Page
+                </Link>
+              </div>
             </div>
-            
+
+            {/* Connect */}
             <div className="ok-md-2 ok-xsd-12 ok-sd-6 widget">
               <h5 className="widget-titel">Connect</h5>
               <div className="widget-content">
-                <p> An ISO 9001 2015, ISO 14001 2015, ISO 45001 2018 Certified Company. </p>
+                <p>
+                  An ISO 9001 2015, ISO 14001 2015, ISO 45001 2018 Certified
+                  Company.
+                </p>
               </div>
               <div className="widget-content">
                 <div className="dima-social-footer social-media social-medium">
                   <ul className="inline clearfix">
-                    <li><a data-animated-link="fadeOut" href="#"><i className="fa fa-facebook"></i></a></li>
-                    <li><a data-animated-link="fadeOut" href="#"><i className="fa fa-twitter"></i></a></li>
-                    <li><a data-animated-link="fadeOut" href="#"><i className="fa fa-google-plus"></i></a></li>
-                    <li><a data-animated-link="fadeOut" href="#"><i className="fa fa-instagram"></i></a></li>
+                    <li>
+                      <Link href="/footer/connect">
+                        <i className="fa fa-facebook"></i>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/footer/connect">
+                        <i className="fa fa-twitter"></i>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/footer/connect">
+                        <i className="fa fa-google-plus"></i>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/footer/connect">
+                        <i className="fa fa-instagram"></i>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -102,7 +188,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
+
       {/* BOTTOM FOOTER */}
       <footer role="contentinfo" className="dima-footer e-footre">
         <div className="container">
@@ -111,16 +197,40 @@ export default function Footer() {
           </div>
           <ul className="inline clearfix text-end hidden-xsd">
             <li className="no-bottom-margin">
-              <a data-animated-link="fadeOut" href="#"><img className="auto-width" src="/images/icons/amex.jpg" alt="" /></a>
+              <Link href="#">
+                <img
+                  className="auto-width"
+                  src="/images/icons/amex.jpg"
+                  alt="Amex"
+                />
+              </Link>
             </li>
             <li className="no-bottom-margin">
-              <a data-animated-link="fadeOut" href="#"><img className="auto-width" src="/images/icons/discover.jpg" alt="" /></a>
+              <Link href="#">
+                <img
+                  className="auto-width"
+                  src="/images/icons/discover.jpg"
+                  alt="Discover"
+                />
+              </Link>
             </li>
             <li className="no-bottom-margin">
-              <a data-animated-link="fadeOut" href="#"><img className="auto-width" src="/images/icons/visa.jpg" alt="" /></a>
+              <Link href="#">
+                <img
+                  className="auto-width"
+                  src="/images/icons/visa.jpg"
+                  alt="Visa"
+                />
+              </Link>
             </li>
             <li className="no-bottom-margin">
-              <a data-animated-link="fadeOut" href="#"><img className="auto-width" src="/images/icons/mastercard.jpg" alt="" /></a>
+              <Link href="#">
+                <img
+                  className="auto-width"
+                  src="/images/icons/mastercard.jpg"
+                  alt="Mastercard"
+                />
+              </Link>
             </li>
           </ul>
         </div>

@@ -43,9 +43,7 @@ export default function RootLayout({
         <script src="/js/core/modernizr-2.8.2.min.js"></script>
         <script src="/js/core/imagesloaded.pkgd.min.js"></script>
         <script src="/js/core/respond.src.js"></script>
-        <script src="/js/libs.min.js"></script>
-        <script src="/js/specific/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
-        <script src="/js/specific/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="/js/libs.js"></script>
         <script src="/js/main.js"></script>
       </body>
     </html>

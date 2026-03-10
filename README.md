@@ -1,152 +1,121 @@
-# O-Kab E-commerce - Next.js Conversion
+# O-Kab E-commerce Project
 
-This is a Next.js conversion of the original shop HTML template, maintaining pixel-perfect design and all functionality.
-
-## 🚀 Features
-
-- ✅ Complete HTML to React/Next.js conversion
-- ✅ Revolution Slider integration
-- ✅ Product filtering with Isotope
-- ✅ Responsive design (desktop & mobile)
-- ✅ Shopping cart functionality
-- ✅ Product quick view with Magnific Popup
-- ✅ All original CSS and JavaScript preserved
-- ✅ Font Awesome icons
-- ✅ Google Fonts (Open Sans, Lato)
+This repository contains both the original shop HTML template and its Next.js conversion.
 
 ## 📁 Project Structure
 
 ```
-frontend/
-├── app/
-│   ├── components/
-│   │   ├── Header.tsx          # Navigation & top bar
-│   │   ├── Slider.tsx          # Revolution slider
-│   │   ├── Banners.tsx         # Promotional banners
-│   │   ├── NewArrivals.tsx     # New products section
-│   │   ├── ProductCard.tsx     # Reusable product component
-│   │   ├── SalesEvent.tsx      # Sales banner
-│   │   ├── PopularProducts.tsx # Filtered products
-│   │   ├── LatestPosts.tsx     # Blog section
-│   │   └── Footer.tsx          # Footer with links
-│   ├── layout.tsx              # Root layout
-│   ├── page.tsx                # Home page
-│   └── globals.css             # Global styles
-├── public/
-│   ├── css/                    # All original CSS files
-│   ├── js/                     # All JavaScript libraries
-│   ├── images/                 # All images
-│   └── fonts/                  # Font files
-└── package.json
+o-kab/
+├── frontend/          # Next.js conversion (Modern React application)
+│   ├── app/          # Next.js app directory
+│   ├── public/       # Static assets (CSS, JS, images, fonts)
+│   └── package.json  # Dependencies
+│
+└── shop/             # Original HTML template
+    ├── css/          # SASS/CSS files
+    ├── js/           # jQuery and plugins
+    ├── images/       # All images
+    ├── fonts/        # Font files
+    └── *.html        # HTML pages
 ```
 
-## 🛠️ Installation
+## 🚀 Quick Start
+
+### Frontend (Next.js)
 
 ```bash
+cd frontend
 npm install
-```
-
-## 🏃 Running the Application
-
-### Development Mode
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000)
 
-### Production Build
-```bash
-npm run build
-npm start
-```
+### Shop (Original HTML)
 
-## 🎨 Design & Assets
+Simply open `shop/index.html` in your browser.
 
-All original design assets from the shop template have been preserved:
+## 📖 Documentation
 
-- **CSS**: Complete SASS/CSS structure from `shop/css/`
-- **JavaScript**: jQuery plugins and libraries from `shop/js/`
-- **Images**: All product images, banners, and icons from `shop/images/`
-- **Fonts**: Font Awesome and custom icon fonts from `shop/fonts/`
+- **Frontend Documentation**: See [frontend/README.md](frontend/README.md)
+- **Conversion Details**: See [frontend/CONVERSION_README.md](frontend/CONVERSION_README.md)
 
-## 🔧 Technical Details
+## 🎯 What's Included
 
-### Key Technologies
-- **Next.js 16.1.6** - React framework
-- **React 19.2.3** - UI library
-- **TypeScript 5** - Type safety
-- **Tailwind CSS 4** - Utility-first CSS (minimal usage)
-- **jQuery 2.1.1** - For legacy plugins
-- **Revolution Slider** - Hero slider
-- **Isotope** - Product filtering
-- **Magnific Popup** - Lightbox/modal
+### Frontend (Next.js Application)
+- ✅ Complete React/TypeScript conversion
+- ✅ Next.js 16 with App Router
+- ✅ All original functionality preserved
+- ✅ Revolution Slider integration
+- ✅ Product filtering with Isotope
+- ✅ Responsive design
+- ✅ Shopping cart
+- ✅ Product quick view
 
-### Script Loading Order
-Scripts are loaded in the exact order as the original HTML:
-1. jQuery
-2. Core utilities (load.js, easing, modernizr, imagesloaded, respond)
-3. libs.min.js (all plugins bundled)
-4. Revolution Slider (tools + main)
-5. main.js (initialization)
+### Shop (Original Template)
+- ✅ Multiple demo variations
+- ✅ E-commerce pages (cart, checkout, product details)
+- ✅ Blog layouts
+- ✅ Portfolio pages
+- ✅ Contact forms
+- ✅ RTL support
+- ✅ Dark mode variants
 
-### Hydration Handling
-- Client-side rendering for slider to avoid hydration issues
-- `suppressHydrationWarning` on elements modified by jQuery
-- Dynamic import with `ssr: false` for Revolution Slider component
+## 🛠️ Technologies
 
-## 📝 Components
+### Frontend
+- Next.js 16.1.6
+- React 19.2.3
+- TypeScript 5
+- Tailwind CSS 4
+- jQuery (for legacy plugins)
 
-### Header
-- Desktop and mobile navigation
-- Shopping cart dropdown
-- Search functionality
-- Multi-level menu system
+### Shop
+- HTML5
+- SASS/CSS3
+- jQuery 2.1.1
+- Bootstrap
+- Revolution Slider
+- Multiple jQuery plugins
 
-### Slider
-- Revolution Slider with 2 slides
-- Animated captions
-- Responsive images
-- Touch-enabled
+## 📦 Features
 
-### Product Sections
-- New Arrivals (4 products)
-- Popular Products (8 products with filtering)
-- Product cards with hover effects
-- Sale badges
-- Rating display
-
-### Footer
-- 6 column layout
-- Links to policies, categories, shop sections
-- Contact information
-- Social media icons
-- Payment method icons
-
-## 🐛 Known Issues & Solutions
-
-### Hydration Warnings
-The application uses `suppressHydrationWarning` on elements that jQuery modifies (loading screen, isotope containers, slider). This is expected behavior when integrating legacy jQuery plugins with React.
-
-### Revolution Slider
-The slider is loaded client-side only to prevent SSR/hydration conflicts. A placeholder is shown during initial load.
+- **Responsive Design**: Works on all devices
+- **Product Management**: Grid and list views with filtering
+- **Shopping Cart**: Add to cart, wishlist functionality
+- **User Account**: Login, registration, account management
+- **Blog**: Multiple blog layouts
+- **SEO Friendly**: Proper meta tags and structure
+- **Performance**: Optimized images and code
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Frontend (Vercel - Recommended)
 ```bash
+cd frontend
 vercel
 ```
 
-### Other Platforms
-Build the production version and deploy the `.next` folder:
+### Frontend (Other Platforms)
 ```bash
+cd frontend
 npm run build
+# Deploy the .next folder
 ```
 
-## 📄 License
+## 📝 Development
 
-This project is a conversion of the original shop template. Please refer to the original template's license for usage rights.
+### Adding New Pages
+1. Create a new file in `frontend/app/`
+2. Follow the existing component structure
+3. Import and use existing components
+
+### Modifying Styles
+- Global styles: `frontend/app/globals.css`
+- Original styles: `frontend/public/css/`
+
+### Adding Components
+Create new components in `frontend/app/components/`
 
 ## 🤝 Contributing
 
@@ -156,10 +125,22 @@ This project is a conversion of the original shop template. Please refer to the 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📧 Contact
+## 📄 License
 
-For questions or support, please open an issue on GitHub.
+This project contains a conversion of a commercial template. Please refer to the original template's license for usage rights.
+
+## 🔗 Links
+
+- **Repository**: https://github.com/rupeshmutkule/o-kab
+- **Frontend Demo**: [Deploy to see live demo]
+- **Original Shop**: Open `shop/index.html` locally
+
+## 📧 Support
+
+For questions or issues:
+- Open an issue on GitHub
+- Check the documentation in `frontend/README.md`
 
 ---
 
-**Note**: This is a pixel-perfect conversion maintaining all original functionality. For a fully modern React implementation, consider refactoring jQuery dependencies to React hooks and state management.
+**Note**: The frontend folder contains a modern Next.js conversion while maintaining pixel-perfect design from the original shop template.

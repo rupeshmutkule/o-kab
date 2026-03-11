@@ -54,13 +54,12 @@ body {
   }
 }
 
-/* Adjust banner height to match reference design */
+/* Banner */
 .banner {
   max-height: 320px !important;
   height: 320px !important;
 }
 
-/* Ensure banner images fit properly */
 .banner img {
   width: 100% !important;
   height: 100% !important;
@@ -69,44 +68,36 @@ body {
   display: block !important;
 }
 
-/* Fix text rotation in slider and other elements
-   IMPORTANT: Do NOT apply transform:none to div/span globally 
-   as it breaks the mobile drawer translateX animation.
-   Scope this only to known slider/text elements. */
+/* Fix writing-mode on text elements ONLY - never on div/span/svg */
 h1, h2, h3, h4, h5, h6, p {
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
 }
 
-/* Only reset transforms on actual text/heading tags, never on div/span */
-h1, h2, h3, h4, h5, h6 {
-  transform: none !important;
-}
+/* NOTE: NO transform:none on h1-h6 or any element.
+   That rule was breaking the mobile drawer. 
+   Slider transform issues are handled by scoped rules below. */
 
-/* Slider captions specifically */
+/* Revolution Slider captions */
 .tp-caption:not(.my-new-slider-text) {
   display: none !important;
 }
 
 .tp-caption {
-  transform: none !important;
   writing-mode: horizontal-tb !important;
   left: 10% !important;
   width: auto !important;
   position: relative !important;
 }
 
-/* Scoped slider animation reset - NOT global div */
-.tp-revslider-mainul .absolute div,
-.rev_slider .absolute div {
-  transform: none !important;
-  animation: none !important;
+/* Scoped slider resets - strictly inside slider containers only */
+.tp-revslider-mainul *,
+.rev_slider * {
+  writing-mode: horizontal-tb !important;
 }
 
-/* Scoped slider transform reset - NOT global [style*="transform"] */
-.tp-revslider-mainul [style*="transform"],
-.rev_slider [style*="transform"],
-.tp-caption[style*="transform"] {
+.tp-revslider-mainul .tp-caption,
+.rev_slider .tp-caption {
   transform: none !important;
 }
 
@@ -114,17 +105,16 @@ h1, h2, h3, h4, h5, h6 {
   writing-mode: horizontal-tb !important;
 }
 
-/* Hide any old text layers */
+/* Hide old text layers */
 .tp-caption, .rev-slider-text-layer {
   display: none !important;
 }
 
-/* Ensure our new slider text is always visible */
 .my-new-slider-text {
   display: flex !important;
 }
 
-/* Center social media icons on team member hover - 2x2 grid */
+/* Social media icons */
 .icons-media {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
@@ -159,14 +149,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #000 !important;
 }
 
-/* Center the overlay container */
 .link_overlay {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
 }
 
-/* Mobile Menu Styling (legacy classes) */
+/* Legacy mobile nav classes */
 .mobile-nav {
   position: fixed !important;
   top: 0 !important;
@@ -209,32 +198,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #00cfc1 !important;
 }
 
-/* ============================================
-   MOBILE FIXES
-   ============================================ */
-
+/* ── MOBILE ── */
 @media (max-width: 768px) {
 
-  /* Hide desktop nav */
   .desk-nav {
     display: none !important;
   }
 
   .dima-btn-nav {
-    display: block !important;
-    position: fixed !important;
-    top: 20px !important;
-    left: 20px !important;
-    z-index: 10000 !important;
-    background: #fff !important;
-    border: none !important;
-    font-size: 24px !important;
-    cursor: pointer !important;
-    padding: 10px !important;
-    color: #333 !important;
+    display: none !important;
   }
 
-  /* Hide "ONLINE STORE" text and subtitle under logo */
+  /* Hide desktop logo subtitle text */
   .logo span,
   .logo p,
   .logo h1 span,
@@ -250,41 +225,30 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
   }
 
-  /* Constrain desktop logo on mobile */
   .logo img,
   .navbar-brand img,
   header .logo img,
   .dima-navbar .logo img {
-    max-height: 36px !important;
+    max-height: 44px !important;
     width: auto !important;
     object-fit: contain !important;
   }
 
-  /* Constrain logo block */
   .logo,
   .navbar-brand {
-    max-width: 120px !important;
+    max-width: 160px !important;
     overflow: hidden !important;
   }
 
-  /* Push page content below fixed mobile header */
+  /* Push page content below 70px fixed header */
   .dima-main,
   main,
   #main-content {
-    padding-top: 56px !important;
-  }
-
-  /* ============================================
-     CRITICAL: Allow mobile drawer to use transform
-     The drawer div uses translateX(-100%) / translateX(0)
-     via inline styles. These MUST NOT be overridden.
-     ============================================ */
-  div[style*="translateX"] {
-    transform: unset;  /* let inline style win - no !important here */
+    padding-top: 70px !important;
   }
 }
 
-/* Show desktop menu on desktop */
+/* ── DESKTOP ── */
 @media (min-width: 769px) {
   .mobile-nav {
     display: none !important;
@@ -293,22 +257,4 @@ h1, h2, h3, h4, h5, h6 {
   .dima-btn-nav {
     display: none !important;
   }
-}
-
-/* ============================================
-   MOBILE DRAWER ANIMATION
-   Class-based so transform:none on div tags
-   cannot interfere with the slide animation.
-   ============================================ */
-.mobile-drawer {
-  -webkit-transform: translateX(-100%) !important;
-          transform: translateX(-100%) !important;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out !important;
-          transition: transform 0.3s ease-in-out !important;
-  will-change: transform;
-}
-
-.mobile-drawer--open {
-  -webkit-transform: translateX(0) !important;
-          transform: translateX(0) !important;
 }

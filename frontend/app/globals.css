@@ -14,6 +14,11 @@ html, body {
   padding: 0;
 }
 
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden !important;
+}
+
 /* Main content area */
 .dima-main {
   display: block !important;
@@ -64,14 +69,21 @@ html, body {
   display: block !important;
 }
 
-/* Fix text rotation in slider and other elements */
-h1, h2, h3, h4, h5, h6, p, span, div {
-  transform: none !important;
+/* Fix text rotation in slider and other elements
+   IMPORTANT: Do NOT apply transform:none to div/span globally 
+   as it breaks the mobile drawer translateX animation.
+   Scope this only to known slider/text elements. */
+h1, h2, h3, h4, h5, h6, p {
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
 }
 
-/* Hide old Revolution Slider captions */
+/* Only reset transforms on actual text/heading tags, never on div/span */
+h1, h2, h3, h4, h5, h6 {
+  transform: none !important;
+}
+
+/* Slider captions specifically */
 .tp-caption:not(.my-new-slider-text) {
   display: none !important;
 }
@@ -84,14 +96,17 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   position: relative !important;
 }
 
-/* Disable animations on slider text */
-.absolute div {
+/* Scoped slider animation reset - NOT global div */
+.tp-revslider-mainul .absolute div,
+.rev_slider .absolute div {
   transform: none !important;
   animation: none !important;
 }
 
-/* Ensure slider content is not rotated */
-[style*="transform"] {
+/* Scoped slider transform reset - NOT global [style*="transform"] */
+.tp-revslider-mainul [style*="transform"],
+.rev_slider [style*="transform"],
+.tp-caption[style*="transform"] {
   transform: none !important;
 }
 
@@ -99,14 +114,12 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   writing-mode: horizontal-tb !important;
 }
 
-/* Additional custom styles can be added here if needed */
-
-/* Hide any old text layers that might be coming from a CSS file */
+/* Hide any old text layers */
 .tp-caption, .rev-slider-text-layer {
   display: none !important;
 }
 
-/* Ensure our new text is always visible */
+/* Ensure our new slider text is always visible */
 .my-new-slider-text {
   display: flex !important;
 }
@@ -153,7 +166,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   align-items: center !important;
 }
 
-/* Mobile Menu Styling */
+/* Mobile Menu Styling (legacy classes) */
 .mobile-nav {
   position: fixed !important;
   top: 0 !important;
@@ -196,14 +209,78 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   color: #00cfc1 !important;
 }
 
-/* Hide desktop menu on mobile */
+/* ============================================
+   MOBILE FIXES
+   ============================================ */
+
 @media (max-width: 768px) {
+
+  /* Hide desktop nav */
   .desk-nav {
     display: none !important;
   }
-  
+
   .dima-btn-nav {
     display: block !important;
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    z-index: 10000 !important;
+    background: #fff !important;
+    border: none !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    padding: 10px !important;
+    color: #333 !important;
+  }
+
+  /* Hide "ONLINE STORE" text and subtitle under logo */
+  .logo span,
+  .logo p,
+  .logo h1 span,
+  .logo h2,
+  .logo h3,
+  .logo small,
+  .logo .online-store,
+  .navbar-brand span,
+  .navbar-brand p,
+  .navbar-brand small,
+  header .logo span,
+  header .logo p {
+    display: none !important;
+  }
+
+  /* Constrain desktop logo on mobile */
+  .logo img,
+  .navbar-brand img,
+  header .logo img,
+  .dima-navbar .logo img {
+    max-height: 36px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Constrain logo block */
+  .logo,
+  .navbar-brand {
+    max-width: 120px !important;
+    overflow: hidden !important;
+  }
+
+  /* Push page content below fixed mobile header */
+  .dima-main,
+  main,
+  #main-content {
+    padding-top: 56px !important;
+  }
+
+  /* ============================================
+     CRITICAL: Allow mobile drawer to use transform
+     The drawer div uses translateX(-100%) / translateX(0)
+     via inline styles. These MUST NOT be overridden.
+     ============================================ */
+  div[style*="translateX"] {
+    transform: unset;  /* let inline style win - no !important here */
   }
 }
 
@@ -212,8 +289,26 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   .mobile-nav {
     display: none !important;
   }
-  
+
   .dima-btn-nav {
     display: none !important;
   }
+}
+
+/* ============================================
+   MOBILE DRAWER ANIMATION
+   Class-based so transform:none on div tags
+   cannot interfere with the slide animation.
+   ============================================ */
+.mobile-drawer {
+  -webkit-transform: translateX(-100%) !important;
+          transform: translateX(-100%) !important;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out !important;
+          transition: transform 0.3s ease-in-out !important;
+  will-change: transform;
+}
+
+.mobile-drawer--open {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
 }

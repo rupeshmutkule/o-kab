@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null | "shop" | "shop-2">(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -474,7 +474,7 @@ export default function Header() {
                         className="fa fa-chevron-down"
                         style={{
                           transform:
-                            activeSubmenu === "shop"
+                            (activeSubmenu as string) === "shop"
                               ? "rotate(180deg)"
                               : "rotate(0deg)",
                           transition: "transform 0.3s ease",
@@ -482,7 +482,7 @@ export default function Header() {
                       ></i>
                     </button>
                   </div>
-                  {activeSubmenu === "shop" && (
+                  {(activeSubmenu as string) === "shop" && (
                     <ul className="sub-menu nav-menu">
                       <li className="sub-icon menu-item-has-children">
                         <div
@@ -511,7 +511,7 @@ export default function Header() {
                               className="fa fa-chevron-down"
                               style={{
                                 transform:
-                                  activeSubmenu === "shop-2"
+                                  (activeSubmenu as string) === "shop-2"
                                     ? "rotate(180deg)"
                                     : "rotate(0deg)",
                                 transition: "transform 0.3s ease",
@@ -519,7 +519,7 @@ export default function Header() {
                             ></i>
                           </button>
                         </div>
-                        {activeSubmenu === "shop-2" && (
+                        {(activeSubmenu as string) === "shop-2" && (
                           <ul className="sub-menu">
                             <li>
                               <a
@@ -567,7 +567,7 @@ export default function Header() {
                               className="fa fa-chevron-down"
                               style={{
                                 transform:
-                                  activeSubmenu === "shop-3"
+                                  (activeSubmenu as string) === "shop-3"
                                     ? "rotate(180deg)"
                                     : "rotate(0deg)",
                                 transition: "transform 0.3s ease",
@@ -575,7 +575,7 @@ export default function Header() {
                             ></i>
                           </button>
                         </div>
-                        {activeSubmenu === "shop-3" && (
+                        {(activeSubmenu as string) === "shop-3" && (
                           <ul className="sub-menu">
                             <li>
                               <a
@@ -639,7 +639,7 @@ export default function Header() {
                               className="fa fa-chevron-down"
                               style={{
                                 transform:
-                                  activeSubmenu === "shop-list"
+                                  (activeSubmenu as string) === "shop-list"
                                     ? "rotate(180deg)"
                                     : "rotate(0deg)",
                                 transition: "transform 0.3s ease",
@@ -647,7 +647,7 @@ export default function Header() {
                             ></i>
                           </button>
                         </div>
-                        {activeSubmenu === "shop-list" && (
+                        {(activeSubmenu as string) === "shop-list" && (
                           <ul className="sub-menu">
                             <li>
                               <a
@@ -798,3 +798,4 @@ export default function Header() {
     </header>
   );
 }
+

@@ -110,3 +110,47 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .my-new-slider-text {
   display: flex !important;
 }
+
+/* Center social media icons on team member hover */
+.icons-media {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.icons-media li {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.icons-media a {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border: 2px solid #fff !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.icons-media a:hover {
+  background: #00cfc1 !important;
+  border-color: #00cfc1 !important;
+  color: #000 !important;
+}
+
+/* Center the overlay container */
+.link_overlay {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

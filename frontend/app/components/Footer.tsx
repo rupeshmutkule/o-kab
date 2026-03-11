@@ -100,24 +100,34 @@ export default function Footer() {
               <div className="widget-content">
                 <ul className="with-border">
                   <li>
-                    <Link href="/footer/policies">Privacy Policy</Link>
+                    <Link href="/footer/policies/nav?type=privacy-policy">
+                      Privacy Policy
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/policies">
+                    <Link href="/footer/policies/nav?type=terms-and-conditions">
                       Terms &amp; Conditions of Use
                     </Link>
                   </li>
                   <li>
-                    <Link href="/footer/policies">Return Policy</Link>
+                    <Link href="/footer/policies/nav?type=return-policy">
+                      Return Policy
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/policies">Refund Policy</Link>
+                    <Link href="/footer/policies/nav?type=refund-policy">
+                      Refund Policy
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/policies">Cancellation Policy</Link>
+                    <Link href="/footer/policies/nav?type=cancellation-policy">
+                      Cancellation Policy
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/footer/policies">Gift Voucher T&amp;C</Link>
+                    <Link href="/footer/policies/nav?type=gift-voucher">
+                      Gift Voucher T&amp;C
+                    </Link>
                   </li>
                 </ul>
               </div>
